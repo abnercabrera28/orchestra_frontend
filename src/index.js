@@ -28,4 +28,18 @@ function createForm() {
 function handleSubmit(event) {
     event.preventDefault()
     const name = event.target[0]
+
+    fetch("http://localhost:3000/orchestras", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            name: name.value
+        })
+    })
+    .then(r => r.json())
+    .then(info => console.log(info))
+    .catch(err => console.warn(err))
 }
