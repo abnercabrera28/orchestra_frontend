@@ -21,4 +21,11 @@ function createForm() {
     const form = document.createElement("form")
     form.innerHTML = `<input id="name-input" placeholder="Name" type="text"/><br><input id="submit" value="Create Orchestra" type="submit"/>`
     formContainer.append(form)
+
+    form.addEventListener("submit", handleSubmit)
+}
+
+function handleSubmit(event) {
+    event.preventDefault()
+    const name = event.target[0]
 }
