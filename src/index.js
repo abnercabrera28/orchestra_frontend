@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    createForm();
     fetchOrchestras();
 })
 
@@ -13,4 +14,9 @@ function fetchOrchestras() {
         })
     })
     .catch(err => console.warn(err))
+}
+
+function createForm() {
+    const formContainer = document.getElementById("form-container")
+    const form = document.createElement("form")
 }
