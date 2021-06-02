@@ -40,6 +40,14 @@ function handleSubmit(event) {
         })
     })
     .then(r => r.json())
-    .then(info => console.log(info))
+    .then(info => { 
+        console.log(info)
+        if (info.status === 201) {
+            //
+        } else {
+            alert(info.errors)
+        }
+        name.value = ""
+})
     .catch(err => console.warn(err))
 }
