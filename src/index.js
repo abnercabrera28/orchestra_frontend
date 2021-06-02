@@ -9,9 +9,7 @@ function fetchOrchestras() {
     fetch("http://localhost:3000/orchestras")
     .then(r => r.json())
     .then(info => {
-        info.forEach(orchestra => {
-            orchestrasContainer.innerHTML += `<li>${orchestra.name}</li>`
-        })
+        info.forEach(addOrchestra)
     })
     .catch(err => console.warn(err))
 }
