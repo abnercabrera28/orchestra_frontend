@@ -51,3 +51,8 @@ function handleSubmit(event) {
 })
     .catch(err => console.warn(err))
 }
+
+function addOrchestra(orchestra) {
+    const orchestrasContainer = document.getElementById("orchestras-container")
+    orchestrasContainer.innerHTML += `<li>${orchestra.name}</li>`
+}
