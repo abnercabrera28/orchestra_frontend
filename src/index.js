@@ -80,5 +80,6 @@ function handleEditDelete(event) {
         .catch(err => console.error(err))
     } else if (event.target.dataset.action === "edit") {
         editMode = li
+        document.getElementById("orchestra-submit").value = "Update"
     }
 }
