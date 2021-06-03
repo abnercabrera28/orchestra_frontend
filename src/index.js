@@ -3,20 +3,20 @@ const orchestraAdapter = new OrchestraAdapter("http://localhost:3000")
 
 document.addEventListener("DOMContentLoaded", () => {
     createForm();
-    fetchOrchestras();
+    orchestraAdapter.fetchOrchestras();
     listenEditDelete();
 })
 
-function fetchOrchestras() {
-    const orchestrasContainer = document.getElementById("orchestras-container")
+// function fetchOrchestras() {
+//     const orchestrasContainer = document.getElementById("orchestras-container")
     
-    fetch("http://localhost:3000/orchestras")
-    .then(r => r.json())
-    .then(info => {
-        info.forEach(addOrchestra)
-    })
-    .catch(err => console.warn(err))
-}
+//     fetch("http://localhost:3000/orchestras")
+//     .then(r => r.json())
+//     .then(info => {
+//         info.forEach(addOrchestra)
+//     })
+//     .catch(err => console.warn(err))
+// }
 
 function createForm() {
     const formContainer = document.getElementById("form-container")
