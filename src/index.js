@@ -64,8 +64,8 @@ function listenEditDelete() {
 }
 
 function handleEditDelete(event) {
+    const li = event.target.parentElement
     if (event.target.dataset.action === "delete") {
-        const li = event.target.parentElement
         fetch(`http://localhost:3000/orchestras/${li.dataset.id}`, {
             method: "DELETE"
         })
