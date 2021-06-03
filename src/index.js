@@ -27,57 +27,57 @@ document.addEventListener("DOMContentLoaded", () => {
 //     form.addEventListener("submit", handleSubmit)
 // }
 
-function handleSubmit(event) {
-    event.preventDefault()
-    const name = event.target[0]
-    if (editMode) {
-        fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify({
-                name: name.value
-            })
-        })
-        .then(r => r.json())
-        .then(info => {
-            if (info.status === 204) {
-                editMode.children[0].innerText = info.orchestra.name
-                editMode = false
-                document.getElementById("orchestra-submit").value = "Create Store"
-                name.value = ""
-            } else {
-                alert(info.errors)
-            }
-        })
-       .catch(err => console.error(err))
+// function handleSubmit(event) {
+//     event.preventDefault()
+//     const name = event.target[0]
+//     if (editMode) {
+//         fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
+//             method: "PATCH",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Accept: "application/json"
+//             },
+//             body: JSON.stringify({
+//                 name: name.value
+//             })
+//         })
+//         .then(r => r.json())
+//         .then(info => {
+//             if (info.status === 204) {
+//                 editMode.children[0].innerText = info.orchestra.name
+//                 editMode = false
+//                 document.getElementById("orchestra-submit").value = "Create Store"
+//                 name.value = ""
+//             } else {
+//                 alert(info.errors)
+//             }
+//         })
+//        .catch(err => console.error(err))
     
-    } else {
-        fetch("http://localhost:3000/orchestras", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify({
-            name: name.value
-        })
-    })
-    .then(r => r.json())
-    .then(info => { 
-        console.log(info)
-        if (info.status === 201) {
-            addOrchestra(info.orchestra)
-        } else {
-            alert(info.errors)
-        }
-        name.value = ""
-})
-    .catch(err => console.warn(err))
-}
-}
+//     } else {
+//         fetch("http://localhost:3000/orchestras", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             Accept: "application/json"
+//         },
+//         body: JSON.stringify({
+//             name: name.value
+//         })
+//     })
+//     .then(r => r.json())
+//     .then(info => { 
+//         console.log(info)
+//         if (info.status === 201) {
+//             addOrchestra(info.orchestra)
+//         } else {
+//             alert(info.errors)
+//         }
+//         name.value = ""
+// })
+//     .catch(err => console.warn(err))
+// }
+// }
 
 function addOrchestra(orchestra) {
     const orchestrasContainer = document.getElementById("orchestras-container")
