@@ -52,8 +52,9 @@ function handleSubmit(event) {
             }
         })
        .catch(err => console.error(err))
-    }
-    fetch("http://localhost:3000/orchestras", {
+    
+    } else {
+        fetch("http://localhost:3000/orchestras", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -74,6 +75,7 @@ function handleSubmit(event) {
         name.value = ""
 })
     .catch(err => console.warn(err))
+}
 }
 
 function addOrchestra(orchestra) {
