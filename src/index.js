@@ -77,5 +77,6 @@ function handleEditDelete(event) {
                 alert(info.message)
             }
         })
+        .catch(err => console.error(err))
     }
 }
