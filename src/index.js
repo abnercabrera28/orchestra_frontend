@@ -37,7 +37,7 @@ function handleSubmit(event) {
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                name: nameInput.value
+                name: name.value
             })
         })
         .then(r => r.json())
@@ -46,7 +46,7 @@ function handleSubmit(event) {
                 editMode.children[0].innerText = info.orchestra.name
                 editMode = false
                 document.getElementById("orchestra-submit").value = "Create Store"
-                nameInput.value = ""
+                name.value = ""
             } else {
                 alert(info.errors)
             }
