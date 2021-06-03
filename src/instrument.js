@@ -13,6 +13,6 @@ class Instrument {
     }
 
     render() {
-       return(`<li data-id= ${this.id}>${this.name} - ${this.quantity}`)
+       return(`<li data-id= ${this.id}>${this.name} (${this.family}) - ${this.quantity}`)
     }
 }
