@@ -45,6 +45,8 @@ function handleSubmit(event) {
             if (info.status === 204) {
                 editMode.children[0].innerText = info.orchestra.name
                 editMode = false
+                document.getElementById("orchestra-submit").value = "Create Store"
+                nameInput.value = ""
             }
         })
     }
