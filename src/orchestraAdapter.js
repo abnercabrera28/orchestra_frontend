@@ -10,7 +10,7 @@ class OrchestraAdapter {
         .then(orchestras => {
             orchestras.forEach(orchestra => {
                 const orch = new Orchestra(orchestra)
-                orch.render()
+                orch.addToDom()
             })
         })
         .catch(err => console.warn(err))
@@ -32,7 +32,7 @@ class OrchestraAdapter {
         console.log(info)
         if (info.status === 201) {
             const orch = new Orchestra(info.orchestra)
-            orch.render()
+            orch.addToDom()
         } else {
             alert(info.errors)
         }
