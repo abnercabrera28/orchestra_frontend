@@ -11,7 +11,7 @@ class OrchestraAdapter {
         .catch(err => console.warn(err))
     }
 
-    editOrchestra(){
+    editOrchestra(editMode, name){
         fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
             method: "PATCH",
             headers: {
