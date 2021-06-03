@@ -29,7 +29,11 @@ function createForm() {
 function handleSubmit(event) {
     event.preventDefault()
     const name = event.target[0]
-
+    if (editMode) {
+        fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
+            
+        })
+    }
     fetch("http://localhost:3000/orchestras", {
         method: "POST",
         headers: {
