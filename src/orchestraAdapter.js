@@ -11,6 +11,31 @@ class OrchestraAdapter {
         .catch(err => console.warn(err))
     }
 
+    createOrchestra(){
+        fetch("http://localhost:3000/orchestras", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            name: name.value
+        })
+    })
+    .then(r => r.json())
+    .then(info => { 
+        console.log(info)
+        if (info.status === 201) {
+            addOrchestra(info.orchestra)
+        } else {
+            alert(info.errors)
+        }
+        name.value = ""
+})
+    .catch(err => console.warn(err))
+    }
+    
+
     editOrchestra(editMode, name){
         fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
             method: "PATCH",
