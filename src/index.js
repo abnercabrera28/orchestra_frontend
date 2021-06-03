@@ -5,7 +5,7 @@ const orchestraForm = new OrchestraForm
 document.addEventListener("DOMContentLoaded", () => {
     orchestraForm.createForm();
     orchestraAdapter.fetchOrchestras();
-    listenEditDelete();
+    orchestraForm.listenEditDelete();
 })
 
 // function fetchOrchestras() {
