@@ -1,3 +1,5 @@
+let editMode = false
+
 document.addEventListener("DOMContentLoaded", () => {
     createForm();
     fetchOrchestras();
