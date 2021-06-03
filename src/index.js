@@ -47,8 +47,11 @@ function handleSubmit(event) {
                 editMode = false
                 document.getElementById("orchestra-submit").value = "Create Store"
                 nameInput.value = ""
+            } else {
+                alert(info.errors)
             }
         })
+       .catch(err => console.error(err))
     }
     fetch("http://localhost:3000/orchestras", {
         method: "POST",
