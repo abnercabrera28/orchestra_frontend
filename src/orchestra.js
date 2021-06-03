@@ -25,4 +25,14 @@ class Orchestra {
         orchestrasContainer.innerHTML += this.render()
     }
 
+    renderInstruments() {
+        const li = document.getElementById(`orchestra-${this.id}`)
+        const ul = document.createElement("ul")
+
+        this.instruments.forEach(i => ul.innerHTML += i.render())
+        li.append(ul)
+            
+        
+    }
+
 }
