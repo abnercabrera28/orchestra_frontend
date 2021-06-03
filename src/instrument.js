@@ -11,4 +11,8 @@ class Instrument {
 
         Instrument.all.push(this)
     }
+
+    render() {
+       return(`<li data-id= ${this.id}>${this.name} - ${this.family}`)
+    }
 }
