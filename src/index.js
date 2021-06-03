@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     createForm();
     fetchOrchestras();
+    listenDelete();
 })
 
 function fetchOrchestras() {
@@ -62,13 +63,17 @@ function listenDelete() {
 
 function handleDelete(event) {
     if (event.target.dataset.action === "delete") {
-        const li = event.target.parent
+        const li = event.target.parentElement
         fetch(`http://localhost:3000/orchestras/${li.dataset.id}`, {
             method: "DELETE"
         })
         .then(r => r.json())
         .then(info => {
-            if (info.message === "Successfully deleted")
+            if (info.message === "Successfully deleted") {
+                li.remove()
+            } else {
+                alert(info.message)
+            }
         })
     }
 }
