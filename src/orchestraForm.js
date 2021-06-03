@@ -21,4 +21,9 @@ class OrchestraForm {
             orchestraAdapter.createOrchestra(name)
         }
     }
+
+    listenEditDelete() {
+        const orchestrasContainer = document.getElementById("orchestras-container")
+        orchestrasContainer.addEventListener("click", this.handleEditDelete)
+    }
 }
