@@ -61,4 +61,19 @@ class OrchestraAdapter {
        .catch(err => console.error(err))
     }
 
+    deleteOrchestra(li) {
+        fetch(`http://localhost:3000/orchestras/${li.dataset.id}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then(info => {
+            if (info.message === "Successfully deleted") {
+                li.remove()
+            } else {
+                alert(info.message)
+            }
+        })
+        .catch(err => console.error(err))
+    }
+
 }
