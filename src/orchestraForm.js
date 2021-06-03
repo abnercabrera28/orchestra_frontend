@@ -37,6 +37,7 @@ class OrchestraForm {
             document.getElementById("orchestra-submit").value = "Update"
             document.getElementById("name-input").value = li.children[0].innerText
         } else if (event.target.dataset.action === "display") {
+            if (currentInstruments) currentInstruments.remove()
             const orch = Orchestra.all.find(orch => orch.id == li.dataset.id)
             orch.renderInstruments()
         }
