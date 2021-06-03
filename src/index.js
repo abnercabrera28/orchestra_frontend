@@ -40,6 +40,13 @@ function handleSubmit(event) {
                 name: nameInput.value
             })
         })
+        .then(r => r.json())
+        .then(info => {
+            if (info.status === 204) {
+                editMode.children[0].innerText = info.orchestra.name
+                editMode = false
+            }
+        })
     }
     fetch("http://localhost:3000/orchestras", {
         method: "POST",
