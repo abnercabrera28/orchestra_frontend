@@ -10,4 +10,9 @@ class Orchestra {
         Orchestra.all.push(this)
     }
 
+    render() {
+        const orchestrasContainer = document.getElementById("orchestras-container")
+        orchestrasContainer.innerHTML += `<li id="orchestra-${this.id}" data-id=${this.id}><span>${this.name}</span> <button data-action='edit'>Edit</button> <button data-action='delete'>Delete</button></li>`
+    }
+
 }
