@@ -7,7 +7,10 @@ class OrchestraAdapter {
     fetchOrchestras() {
         fetch(this.orchestraURL)
         .then(r => r.json())
-        .then(orchestras => console.log(orchestras))
+        .then(orchestras => {
+            const orch = new Orchestra(orchestra)
+            orch.render()
+        })
         .catch(err => console.warn(err))
     }
 
