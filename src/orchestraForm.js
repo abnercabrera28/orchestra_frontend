@@ -1,4 +1,8 @@
 class OrchestraForm {
+    constructor(){
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
     createForm() {
         const formContainer = document.getElementById("form-container")
         const form = document.createElement("form")
