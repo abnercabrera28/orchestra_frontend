@@ -59,3 +59,16 @@ function listenDelete() {
     const orchestrasContainer = document.getElementById("orchestras-container")
     orchestrasContainer.addEventListener("click", handleDelete)
 }
+
+function handleDelete(event) {
+    if (event.target.dataset.action === "delete") {
+        const li = event.target.parent
+        fetch(`http://localhost:3000/orchestras/${li.dataset.id}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then(info => {
+            if (info.message === "Successfully deleted")
+        })
+    }
+}
