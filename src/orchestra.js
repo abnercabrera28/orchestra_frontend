@@ -31,7 +31,7 @@ class Orchestra {
 
         this.instruments.forEach(i => ul.innerHTML += i.render())
         li.append(ul)
-            
+        currentInstruments = ul    
         
     }
 
