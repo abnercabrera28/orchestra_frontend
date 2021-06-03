@@ -7,4 +7,14 @@ class OrchestraForm {
     
         form.addEventListener("submit", handleSubmit)
     }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        const name = event.target[0]
+        if (editMode) {
+            orchestraAdapter.editOrchestra(editMode, name)
+        } else {
+            orchestraAdapter.createOrchestra(name)
+        }
+    }
 }
