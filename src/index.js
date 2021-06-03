@@ -3,7 +3,7 @@ let editMode = false
 document.addEventListener("DOMContentLoaded", () => {
     createForm();
     fetchOrchestras();
-    listenDelete();
+    listenEditDelete();
 })
 
 function fetchOrchestras() {
