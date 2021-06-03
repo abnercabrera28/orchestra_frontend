@@ -31,7 +31,8 @@ class OrchestraAdapter {
     .then(info => { 
         console.log(info)
         if (info.status === 201) {
-            addOrchestra(info.orchestra)
+            const orch = new Orchestra(info.orchestra)
+            orch.render()
         } else {
             alert(info.errors)
         }
