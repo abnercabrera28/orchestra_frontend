@@ -41,7 +41,7 @@ function handleSubmit(event) {
     .then(info => { 
         console.log(info)
         if (info.status === 201) {
-            //
+            addOrchestra(info.orchestra)
         } else {
             alert(info.errors)
         }
@@ -52,5 +52,5 @@ function handleSubmit(event) {
 
 function addOrchestra(orchestra) {
     const orchestrasContainer = document.getElementById("orchestras-container")
-    orchestrasContainer.innerHTML += `<li>${orchestra.name}</li>`
+    orchestrasContainer.innerHTML += `<li id="orchestra-${orchestra.id}" data-id=${orchestra.id}><span>${orchestra.name}</span> <button data-action='delete'>Delete</button></li>`
 }
