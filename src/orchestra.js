@@ -11,13 +11,18 @@ class Orchestra {
     }
 
     render(){
-        return(`<li id="store-${this.id}" data-id=${this.id}>
+        return(`<li id="orchestra-${this.id}" data-id=${this.id}>
                 <span>${this.name}</span> 
                 <button data-action='display'>Display Instruments</button>
                 <button data-action='edit'>Edit</button> 
                 <button data-action='delete'>Delete</button>
             </li>`
         )
+    }
+
+    addToDom(){
+        const orchestrasContainer = document.getElementById("orchestras-container");
+        orchestrasContainer.innerHTML += this.render()
     }
 
 }
