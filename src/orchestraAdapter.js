@@ -11,7 +11,7 @@ class OrchestraAdapter {
         .catch(err => console.warn(err))
     }
 
-    createOrchestra(){
+    createOrchestra(name){
         fetch("http://localhost:3000/orchestras", {
         method: "POST",
         headers: {
@@ -31,10 +31,10 @@ class OrchestraAdapter {
             alert(info.errors)
         }
         name.value = ""
-})
+    })
     .catch(err => console.warn(err))
-    }
-    
+}
+
 
     editOrchestra(editMode, name){
         fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
