@@ -58,9 +58,9 @@ function addOrchestra(orchestra) {
     orchestrasContainer.innerHTML += `<li id="orchestra-${orchestra.id}" data-id=${orchestra.id}><span>${orchestra.name}</span> <button data-action='edit'>Edit</button> <button data-action='delete'>Delete</button></li>`
 }
 
-function listenDelete() {
+function listenEditDelete() {
     const orchestrasContainer = document.getElementById("orchestras-container")
-    orchestrasContainer.addEventListener("click", handleDelete)
+    orchestrasContainer.addEventListener("click", handleEditDelete)
 }
 
 function handleEditDelete(event) {
