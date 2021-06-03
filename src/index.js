@@ -1,5 +1,6 @@
 let editMode = false
 const orchestraAdapter = new OrchestraAdapter("http://localhost:3000")
+const orchestraForm = new OrchestraForm
 
 document.addEventListener("DOMContentLoaded", () => {
     createForm();
