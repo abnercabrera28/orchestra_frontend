@@ -36,6 +36,9 @@ class OrchestraForm {
             editMode = li
             document.getElementById("orchestra-submit").value = "Update"
             document.getElementById("name-input").value = li.children[0].innerText
+        } else if (event.target.dataset.action === "display") {
+            const orch = Orchestra.all.find(orch => orch.id == li.dataset.id)
+            orch.renderInstruments()
         }
     }
 }
