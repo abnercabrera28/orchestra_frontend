@@ -31,7 +31,14 @@ function handleSubmit(event) {
     const name = event.target[0]
     if (editMode) {
         fetch(`http://localhost:3000/orchestras/${editMode.dataset.id}`, {
-            
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                name: nameInput.value
+            })
         })
     }
     fetch("http://localhost:3000/orchestras", {
