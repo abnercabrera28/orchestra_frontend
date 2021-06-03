@@ -1,6 +1,7 @@
 class OrchestraForm {
     constructor(){
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleEditDelete = this.handleEditDelete.bind(this)
     }
 
     createForm() {
