@@ -90,24 +90,24 @@ function addOrchestra(orchestra) {
 //     orchestrasContainer.addEventListener("click", handleEditDelete)
 // }
 
-function handleEditDelete(event) {
-    const li = event.target.parentElement
-    if (event.target.dataset.action === "delete") {
-        fetch(`http://localhost:3000/orchestras/${li.dataset.id}`, {
-            method: "DELETE"
-        })
-        .then(r => r.json())
-        .then(info => {
-            if (info.message === "Successfully deleted") {
-                li.remove()
-            } else {
-                alert(info.message)
-            }
-        })
-        .catch(err => console.error(err))
-    } else if (event.target.dataset.action === "edit") {
-        editMode = li
-        document.getElementById("orchestra-submit").value = "Update"
-        document.getElementById("name-input").value = li.children[0].innerText
-    }
-}
+// function handleEditDelete(event) {
+//     const li = event.target.parentElement
+//     if (event.target.dataset.action === "delete") {
+//         fetch(`http://localhost:3000/orchestras/${li.dataset.id}`, {
+//             method: "DELETE"
+//         })
+//         .then(r => r.json())
+//         .then(info => {
+//             if (info.message === "Successfully deleted") {
+//                 li.remove()
+//             } else {
+//                 alert(info.message)
+//             }
+//         })
+//         .catch(err => console.error(err))
+//     } else if (event.target.dataset.action === "edit") {
+//         editMode = li
+//         document.getElementById("orchestra-submit").value = "Update"
+//         document.getElementById("name-input").value = li.children[0].innerText
+//     }
+// }
