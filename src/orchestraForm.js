@@ -26,4 +26,15 @@ class OrchestraForm {
         const orchestrasContainer = document.getElementById("orchestras-container")
         orchestrasContainer.addEventListener("click", this.handleEditDelete)
     }
+
+    handleEditDelete(event) {
+        const li = event.target.parentElement
+        if (event.target.dataset.action === "delete") {
+            orchestraAdapter.deleteOrchestra(li)
+        } else if (event.target.dataset.action === "edit") {
+            editMode = li
+            document.getElementById("orchestra-submit").value = "Update"
+            document.getElementById("name-input").value = li.children[0].innerText
+        }
+    }
 }
