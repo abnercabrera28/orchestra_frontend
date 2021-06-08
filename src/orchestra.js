@@ -2,10 +2,10 @@ class Orchestra {
 
     static all = []
 
-    constructor({id, name, instruments}) {
+    constructor({id, name, instruments = []}) {
         this.id = id
         this.name = name
-        this.instruments = instruments.map(i => new Instrument(i))
+        this.instruments = instruments.map(i => new Instrument(i)) 
        
         Orchestra.all.push(this)
     }
