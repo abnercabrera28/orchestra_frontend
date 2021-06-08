@@ -18,6 +18,7 @@ class OrchestraForm {
         const name = event.target[0]
         if (editMode) {
             orchestraAdapter.editOrchestra(editMode, name)
+            editMode = false
         } else {
             orchestraAdapter.createOrchestra(name)
         }
