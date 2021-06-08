@@ -58,7 +58,7 @@ class OrchestraAdapter {
             if (info.status === 204) {
                 editMode.children[0].innerText = info.orchestra.name
                 editMode = false
-                document.getElementById("orchestra-submit").value = "Create Store"
+                document.getElementById("orchestra-submit").value = "Create Orchestra"
                 name.value = ""
             } else {
                 alert(info.errors)
