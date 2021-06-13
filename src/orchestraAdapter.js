@@ -73,6 +73,7 @@ class OrchestraAdapter {
         })
         .then(r => r.json())
         .then(info => {
+            console.log(info)
             if (info.message === "Successfully deleted") {
                 li.remove()
             } else {
